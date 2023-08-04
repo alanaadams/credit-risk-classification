@@ -19,9 +19,23 @@ The purpose of this analysis is to determine, based on the predictive model used
  Using sklearn metrics, the model was assessed based on the accuracy score,  confusion matrix, and classification report of its predictions for the testing dataset.
 
 ### Results
-
+- Machine Learning Model:
+    - Confusion Matrix Scores:
+        - 0.299% Testing Loans Falsely Identified as Healthy (56/18,719)
+        - 15.338% Testing Loans Falsely Identified as High Risk (102/665)
+    - Balanced Accuracy Score:
+        - 95.2%
+    - Precision Score:
+        - 99.7% for healthy loans (rounded to 100% in classification report)
+        - 85% for high risk loans
+    - Recall Score:
+        - 99% for healthy loans
+        - 91% for high risk loans
 
 ### Summary
+The model has high accuracy (95%), and has higher precision determining healthy loans than determining high-risk loans. This is likely due to the training size of the high-risk loans, as there were significantly fewer training data for high-risk loans than healthy loans. The model identified nearly twice as many loans incorrectly as high risk than those it identified incorrectly as healthy loans (102 vs 56). This may lead to an overall-bias toward identifying more loans being flagged as high-risk than is accurate. 
+
+Overall, this model seems adequate for initial loan classification. The model is recommended for predicting the classification of loans as healthy or high-risk.  Additional oversight with regard to those loans classified as high-risk is also recommended to prevent a disproportionate amount of healthy loans from being classified as high-risk for the company.
 
 **************************************************
 ## Overall Project Requirements
